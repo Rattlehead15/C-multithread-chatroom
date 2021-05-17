@@ -64,8 +64,10 @@ int main(int argc, char **argv) {
   while(1) {
     recv(sock, buf, sizeof(buf), 0);
     buf[1023] = '\0';
-    if(!strcmp(buf, "/exit"))
+    if(!strcmp(buf, "/exit")) {
+      printf("Server closed. The program will now exit.\n");
       break;
+    }
     printf("%s\n", buf);
   }
 
