@@ -1,6 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/rattlehead15/ejerciciochat'
-gcc -g -pthread RemoteClient.c -o RemoteClient.exe
-gcc -g -pthread RemoteMultiThreadServer.c slist.c -o RemoteMultiThreadServer.exe
-make: Leaving directory '/home/rattlehead15/ejerciciochat'
- 
