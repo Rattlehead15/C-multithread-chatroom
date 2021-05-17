@@ -1,12 +1,12 @@
 ARGS = -g -pthread
 
-all: RemoteClient.exe servidor.exe
+all: cliente servidor
 
-RemoteClient.exe: RemoteClient.c
-	gcc $(ARGS) RemoteClient.c -o cliente.exe
+cliente: RemoteClient.c
+	gcc $(ARGS) RemoteClient.c -o cliente
 
-RemoteMultiThreadServer.exe: RemoteMultiThreadServer.c
-	gcc $(ARGS) RemoteMultiThreadServer.c slist.c -o RemoteMultiThreadServer.exe
+servidor: RemoteMultiThreadServer.c
+	gcc $(ARGS) RemoteMultiThreadServer.c slist.c -o servidor
 
 clean:
-	rm *.exe
+	rm servidor cliente
