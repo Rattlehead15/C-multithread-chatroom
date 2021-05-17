@@ -208,10 +208,10 @@ void destruirCliente(void *cliente) {
 }
 
 void cortarConexiones(int signal) {
+  printf("Closing server. Clients will be disconnected\n");
   pthread_mutex_lock(&usarLista);
   slist_destruir(clientList, destruirCliente);
   pthread_mutex_unlock(&usarLista);
   pthread_mutex_destroy(&usarLista);
-  printf("Hasta la proximaaaa\n");
   exit(0);
 }
